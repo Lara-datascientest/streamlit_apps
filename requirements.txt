@@ -1,0 +1,4 @@
+streamlit
+spacy_streamlit
+textblob
+textblob_fr  
