@@ -2,7 +2,7 @@
 """
 Created on Tue Dec 29 13:32:41 2020
 
-@author: Lara_bis
+@author: Lara
 """
 import streamlit as st
 def main():
