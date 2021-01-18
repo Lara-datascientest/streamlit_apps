@@ -2,3 +2,6 @@ streamlit
 spacy_streamlit
 textblob
 textblob_fr  
+nltk.download(fr_core_news_sm)
+nltk.download(fr_core_news_md)
+nltk.download(fr_core_news_lg)
