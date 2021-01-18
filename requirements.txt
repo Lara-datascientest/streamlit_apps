@@ -2,6 +2,6 @@ streamlit
 spacy_streamlit
 textblob
 textblob_fr  
-python -m spacy download fr_core_news_sm
-python -m spacy download fr_core_news_md
-python -m spacy download fr_core_news_lg
+https://github.com/explosion/spacy-models/releases/download/fr_core_news_md-2.3.0/fr_core_news_md-2.3.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-2.3.0/fr_core_news_sm-2.3.0.tar.gz
+https://github.com/explosion/spacy-models/releases/download/fr_core_news_lg-2.3.0/fr_core_news_lg-2.3.0.tar.gz
