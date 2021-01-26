@@ -1,4 +1,4 @@
-tensorflow
+keras
 streamlit
 tensorflow.keras.preprocessing.sequence
 tensorflow.keras.preprocessing.text
