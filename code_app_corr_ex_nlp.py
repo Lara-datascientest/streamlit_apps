@@ -6,9 +6,9 @@ Created on Tue Jan 26 17:37:38 2021
 """
 
 import streamlit as st
-from tensorflow.keras.preprocessing.sequence import pad_sequences 
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.models import load_model
+from keras.preprocessing.sequence import pad_sequences 
+from keras.preprocessing.text import Tokenizer
+from keras.models import load_model
 import os
 
 def main():
