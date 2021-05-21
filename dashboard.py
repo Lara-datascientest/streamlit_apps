@@ -63,7 +63,7 @@ with indicateur_33:
                 unsafe_allow_html=True)
 
 with indicateur_44: 
-    st.markdown("**% d'hommes sur les clients identifieés**")
+    st.markdown("**% d'hommes sur les clients identifiés**")
     number44="61%"
     st.markdown(f"<h1 style='text-align: center; color: LightSkyBlue;'>{number44}<h1/>",
                 unsafe_allow_html=True)
