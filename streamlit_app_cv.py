@@ -32,9 +32,8 @@ def main():
         image = image.resize((64,64))
         image_redim = img_to_array(image)/255
         image_redim = np.expand_dims(image_redim, axis = 0)
-        
+        model = load_model(chemin)
         try: 
-            model=load_model(chemin)
             proba = round(100*model.predict(image_redim)[0][0], 2)
             if proba < 50:
                 proba = round(100-proba, 2)
@@ -43,9 +42,8 @@ def main():
                 st.write("C'est le père Noël et on en est sur à:",proba,"%") 
                 
         except ValueError:
-            model = load_model(chemin)
             image_redim = image_redim[:1, :64, :64, :3]
-            proba = round(100*model.predict(test_image)[0][0], 2)
+            proba = round(100*model.predict(image_redim)[0][0], 2)
             if proba < 50:
                 proba = round(100-proba, 2)
                 st.write("Ce n'est pas le père Noël et on en est sur à:",proba,"%")
