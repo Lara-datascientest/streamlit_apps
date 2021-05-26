@@ -2,7 +2,7 @@
 """
 Created on Mon Dec 28 17:11:17 2020
 
-@author: Lara_bis
+@author: Lara
 """
 import streamlit as st
 import numpy as np
@@ -28,21 +28,19 @@ def main():
     if image is not None:
         image = Image.open(image)
         st.image(image,caption="Image importée",use_column_width=True)
-        size=(64,64)
-        image = image.resize(size)
-        test_image = img_to_array(image)/255
-        test_image = np.expand_dims(test_image, axis = 0)
+        image = image.resize((64,64))
+        image_redim = img_to_array(image)/255
+        image_redim = np.expand_dims(image_redim, axis = 0)
+        model=load_model(chemin)
         try: 
-            model=load_model(chemin)
-            proba = round(100*model.predict(test_image)[0][0], 2)
+            proba = round(100*model.predict(image_redim)[0][0], 2)
             if proba < 50:
                 proba = round(100-proba, 2)
                 st.write("Ce n'est pas le père Noël et on en est sur à:",proba,"%")
             else:
                 st.write("C'est le père Noël et on en est sur à:",proba,"%") 
         except ValueError:
-            test_image=test_image[:1,:64, :64,:3]
-            model=load_model(chemin)
+            image_redim=image_redim[:1, :64, :64, :3]
             proba = round(100*model.predict(test_image)[0][0], 2)
             if proba < 50:
                 proba = round(100-proba, 2)
