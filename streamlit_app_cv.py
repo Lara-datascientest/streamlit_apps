@@ -25,22 +25,26 @@ def main():
 
     st.header("Choisissez une image à classifier")
     image = st.file_uploader("Image:", type=["png", "jpg", "jpeg"])
+    
     if image is not None:
         image = Image.open(image)
         st.image(image,caption="Image importée",use_column_width=True)
         image = image.resize((64,64))
         image_redim = img_to_array(image)/255
         image_redim = np.expand_dims(image_redim, axis = 0)
-        model=load_model(chemin)
+        
         try: 
+            model=load_model(chemin)
             proba = round(100*model.predict(image_redim)[0][0], 2)
             if proba < 50:
                 proba = round(100-proba, 2)
                 st.write("Ce n'est pas le père Noël et on en est sur à:",proba,"%")
             else:
                 st.write("C'est le père Noël et on en est sur à:",proba,"%") 
+                
         except ValueError:
-            image_redim=image_redim[:1, :64, :64, :3]
+            model = load_model(chemin)
+            image_redim = image_redim[:1, :64, :64, :3]
             proba = round(100*model.predict(test_image)[0][0], 2)
             if proba < 50:
                 proba = round(100-proba, 2)
