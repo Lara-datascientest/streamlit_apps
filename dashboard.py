@@ -15,7 +15,7 @@ st.set_page_config(page_title = "Dashboard technique",
 
 st.markdown("# Chiffres clés ")
 
-indicateur_1, indicateur_2, indicateur_3 = st.beta_columns(3)
+indicateur_1, indicateur_2, indicateur_3 = st.columns(3)
 
 
 with indicateur_1: 
@@ -41,7 +41,7 @@ st.markdown("<hr/>", unsafe_allow_html=True)
     
 st.markdown("# Caractéristiques des clients identifiés")
 
-indicateur_11, indicateur_22, indicateur_33, indicateur_44, indicateur_55= st.beta_columns(5)
+indicateur_11, indicateur_22, indicateur_33, indicateur_44, indicateur_55= st.columns(5)
 
     
 with indicateur_11: 
@@ -76,7 +76,7 @@ with indicateur_55:
 
 st.markdown("# Caractéristiques sur tous les clients ")
 
-indicateur_111, indicateur_222, indicateur_333, indicateur_444, indicateur_555 = st.beta_columns(5)
+indicateur_111, indicateur_222, indicateur_333, indicateur_444, indicateur_555 = st.columns(5)
 
 with indicateur_111: 
     st.markdown("**% de clients avec dommages**")
